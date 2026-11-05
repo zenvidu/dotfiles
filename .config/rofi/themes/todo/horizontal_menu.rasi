@@ -1,0 +1,81 @@
+/*****----- Configuration -----*****/
+
+@import	"~/.config/matugen/generated/rofi-matugen.rasi"
+
+configuration {
+	show-icons:                 false;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    width:                       450px;
+    border-radius:               7px;
+    border:                      1px;
+    border-color:                @on-primary-alpha;
+    padding:                     10px;
+    background-color:            @surface-alpha;
+    children:                    [ "mainbox" ];
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    background-color:            transparent;
+    children:                    [ "message", "listview" ];
+}
+
+/*****----- Message -----*****/
+message {
+    padding:                     10px;
+    background-color:            inherit;
+}
+textbox {
+    background-color:            transparent;
+    text-color:                  @on-surface;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    markup:                      true;
+}
+
+/*****----- Listview -----*****/
+listview {
+    columns:                     2;
+    lines:                       1;
+    cycle:                       true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    spacing:                     8px;
+    padding:                     20px;
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+/*****----- Elements -----*****/
+element {
+    padding:                     10px;
+    border-radius:               7px;
+    background-color:            @surface-alpha;
+    text-color:                  @on-surface;
+    cursor:                      pointer;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    horizontal-align:            0.5;
+    vertical-align:              0.5;
+}
+
+element selected {
+    background-color:            @on-primary-alpha;
+    text-color:                  @on-surface;
+}
+
+inputbar {
+    enabled: false;
+}

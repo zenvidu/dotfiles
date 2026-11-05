@@ -1,0 +1,52 @@
+
+@import	"~/.config/matugen/generated/rofi-matugen.rasi"
+
+* {
+    background-color:   transparent;
+    font:               @primary-font;
+    text-color:			@on-surface;
+}
+
+window {
+    location:           center;
+    width:              302px;
+    border-radius:		7px;
+    background-color:   @surface-alpha;
+}
+
+mainbox {
+    padding:			7px;
+}
+
+inputbar {
+    background-color:  transparent;
+    children:          [ "entry" ];
+}
+
+entry {
+    enabled:            true;
+    expand:             false;
+    padding:            5px 0px 0px 10px;
+    background-color:   transparent;
+    text-color:         inherit;
+    cursor:             text;
+    cursor-color:       transparent;
+    placeholder:        "Emoji Picker";
+    placeholder-color:  @on-surface-variant-alpha;
+}
+
+listview {
+    padding:            10px;
+    columns:            5;
+    lines:              6;
+}
+
+element {
+    padding:			11px 16px;
+}
+
+element selected normal {
+    border-radius:		5px;
+    background-color:   @on-primary-alpha;
+    text-color:         @on-surface;
+}

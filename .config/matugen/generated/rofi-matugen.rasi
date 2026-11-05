@@ -1,0 +1,63 @@
+/***
+ *    ░█▀▀█ ░█▀▀▀█ ░█▀▀▀ ▀█▀ ── ░█▀▄▀█ ─█▀▀█ ▀▀█▀▀ ░█─░█ ░█▀▀█ ░█▀▀▀ ░█▄─░█
+ *    ░█▄▄▀ ░█──░█ ░█▀▀▀ ░█─ ▀▀ ░█░█░█ ░█▄▄█ ─░█── ░█─░█ ░█─▄▄ ░█▀▀▀ ░█░█░█
+ *    ░█─░█ ░█▄▄▄█ ░█─── ▄█▄ ── ░█──░█ ░█─░█ ─░█── ─▀▄▄▀ ░█▄▄█ ░█▄▄▄ ░█──▀█
+ *
+ ***/
+
+* {
+    primary-font:	"JetBrainsMono Nerd Font Propo 12";
+    secondary-font:	"Hack Nerd Font Propo 12";
+    tertiary-font:	"JetBrainsMono Nerd Font Propo 18";
+    icon-font:      "JetBrainsMono Nerd Font Propo 24";
+
+    primary: #a6d394;
+    primary-fixed: #c2efae;
+    primary-fixed-dim: #a6d394;
+    on-primary: #13380a;
+    on-primary-alpha: #13380a9b;
+    on-primary-fixed: #022100;
+    on-primary-fixed-variant: #2a4f1f;
+    primary-container: #2a4f1f;
+    on-primary-container: #c2efae;
+    secondary: #bbcbb1;
+    secondary-fixed: #d7e8cc;
+    secondary-fixed-dim: #bbcbb1;
+    on-secondary: #273421;
+    on-secondary-fixed: #121f0e;
+    on-secondary-fixed-variant: #3d4b36;
+    secondary-container: #3d4b36;
+    on-secondary-container: #d7e8cc;
+    tertiary: #a0cfd1;
+    tertiary-dim: #a0cfd19b;
+    tertiary-fixed: #bcebed;
+    tertiary-fixed-dim: #a0cfd1;
+    on-tertiary: #003739;
+    on-tertiary-fixed: #002021;
+    on-tertiary-fixed-variant: #1e4e50;
+    tertiary-container: #1e4e50;
+    on-tertiary-container: #bcebed;
+    error: #ffb4ab;
+    on-error: #690005;
+    error-container: #93000a;
+    on-error-container: #ffdad6;
+    surface: #11140f;
+    surface-alpha: #11140fCC;
+    on-surface: #e1e4da;
+    on-surface-variant: #c3c8bc;
+    on-surface-variant-alpha: #c3c8bc80;
+    outline: #8d9387;
+    outline-variant: #43483f;
+    shadow: #000000;
+    scrim: #000000;
+    inverse-surface: #e1e4da;
+    inverse-on-surface: #2e322b;
+    inverse-primary: #416835;
+    surface-dim: #11140f;
+    surface-bright: #373a34;
+    surface-container-lowest: #0c0f0a;
+    surface-container-low: #191d17;
+    surface-container: #1d211b;
+    surface-container-high: #272b25;
+    surface-container-highest: #32362f;
+}

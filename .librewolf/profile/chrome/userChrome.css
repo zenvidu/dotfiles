@@ -1,0 +1,72 @@
+@import url("components/vertical_bookmarks_toolbar.css");
+
+:root {
+  --uc-vertical-toolbar-width: 40px !important;
+
+  #PersonalToolbar {
+    --toolbarbutton-hover-background: transparent !important;
+    --toolbarbutton-active-background: transparent !important;
+  }
+
+  #PersonalToolbar #PlacesToolbarItems > .bookmark-item {
+    padding-block: 12px !important;
+  }
+
+  #personal-bookmarks .bookmark-item > .toolbarbutton-text,
+  #PersonalToolbar #import-button label {
+    display: none !important;
+  }
+
+  #PlacesToolbarItems
+    > .bookmark-item
+    > .toolbarbutton-icon[label]:not([label=""]),
+  #OtherBookmarks.bookmark-item[container] > .toolbarbutton-icon,
+  #bookmarks-toolbar-placeholder > .toolbarbutton-icon {
+    margin-inline: 0px !important;
+  }
+
+  #PlacesToolbarItems > .bookmark-item > menupopup,
+  #OtherBookmarks #OtherBookmarksPopup {
+    margin-inline-start: calc(var(--padding-left-tab) - 2px) !important;
+    margin-top: 3px !important;
+  }
+
+  #PersonalToolbar > toolbarbutton > menupopup {
+    margin-right: calc(var(--padding-left-tab) - 9px) !important;
+    margin-top: 3px !important;
+  }
+
+  #PersonalToolbar #PlacesToolbarItems > .bookmark-item .toolbarbutton-icon,
+  #PersonalToolbar #OtherBookmarks:not(bookmark-item) .toolbarbutton-icon {
+    transition: all 0.2s ease !important;
+  }
+
+  @keyframes scalezoom {
+    0% {
+      transform: scale(1.2);
+    }
+
+    50% {
+      transform: scale(0.7);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* 'hover' icons */
+  #PersonalToolbar {
+    & .toolbarbutton-1:is(:hover):not(:active, [open]) > image,
+    &
+      #PlacesToolbarItems
+      > .bookmark-item:is(:hover, :active):not([open])
+      > .toolbarbutton-icon,
+    &
+      #OtherBookmarks:not(bookmark-item):is(:hover, :active):not([open])
+      > .toolbarbutton-icon {
+      transform: scale(1.2) !important;
+      transition-duration: 200ms !important;
+    }
+  }
+}

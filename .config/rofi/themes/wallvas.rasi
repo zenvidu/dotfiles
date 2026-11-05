@@ -1,0 +1,112 @@
+
+@import	"~/.config/matugen/generated/rofi-matugen.rasi"
+
+* {
+    background-color:   transparent;
+    font:               @primary-font;
+}
+
+window {
+    location:          center;
+    width:             1500px;
+    border-radius:     7px;
+    background-color:  @surface-alpha;
+}
+
+mainbox {
+    orientation:       horizontal;
+    spacing:           0px;
+    background-color:  transparent;
+    children:          [ "inputbar", "listbox" ];
+}
+
+listbox {
+    spacing:           20px;
+    padding:           20px;
+    orientation:       horizontal;
+    background-color:  transparent;
+    children:          [ "listview" ];
+}
+
+inputbar {
+    orientation:       horizontal;
+    spacing:           10px;
+    padding:           20px 30px;
+    background-color:  transparent;
+    background-image:  url("~/.cache/wallvas/cwall", height);
+    /*background-image:  url("~/Downloads/b2.png", height);*/
+    text-color:        @on-surface;
+    children:          [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color:		   @tertiary;
+    orientation:       vertical;
+    vertical-align:    0.5;
+}
+
+entry {
+    enabled:           true;
+    orientation:       vertical;
+    vertical-align:    0.5;
+    background-color:  transparent;
+    text-color:        inherit;
+    cursor-color:      transparent;
+    //placeholder:     "Search";
+    placeholder-color: @on-surface-variant-alpha;
+}
+
+listview {
+    enabled:           true;
+    columns:           6;
+    lines:             2;
+    cycle:             true;
+    dynamic:           true;
+    scrollbar:         false;
+    layout:            vertical;
+    reverse:           false;
+    fixed-height:      true;
+    fixed-columns:     true;
+    spacing:           10px;
+    background-color:  transparent;
+}
+
+element {
+    enabled:           true;
+    spacing:           10px;
+    padding:           4px;
+    background-color:  transparent;
+    cursor:            pointer;
+    orientation:       vertical;
+}
+element selected normal, element selected active {
+    border-radius:	   5px;
+    background-color:  @on-primary-alpha;
+}
+element-icon {
+    background-color:  transparent;
+    text-color:        inherit;
+    size:              20%;
+    cursor:            pointer;
+}
+element-text {
+    enabled:           false;
+}
+
+message {
+    background-color:  transparent;
+}
+textbox {
+    padding:           12px;
+    border-radius:     7px;
+    background-color:  @surface-alpha;
+    text-color:        @on-surface;
+    vertical-align:    0.5;
+    horizontal-align:  0.0;
+}
+error-message {
+    padding:           12px;
+    border-radius:     7px;
+    background-color:  @on-primary-alpha;
+    text-color:        @on-surface;
+}

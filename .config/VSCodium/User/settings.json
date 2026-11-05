@@ -1,0 +1,133 @@
+{
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+
+    "catppuccin.accentColor": "blue",
+    "breadcrumbs.enabled": false,
+    "scm.diffDecorations": "none",
+    "git.decorations.enabled": false,
+    "problems.decorations.enabled": false,
+
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
+    "workbench.tips.enabled": false,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.showTabs": "multiple",
+    "workbench.startupEditor": "none",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.remoteIndicator.showExtensionRecommendations": false,
+    "workbench.browser.dataStorage": "ephemeral",
+    "workbench.browser.openLocalhostLinks": true,
+
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace'",
+    "editor.minimap.enabled": false,
+    "editor.fontLigatures": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.smoothScrolling": true,
+    "editor.mouseWheelZoom": true,
+    "editor.detectIndentation": false,
+    "editor.scrollbar.verticalScrollbarSize": 6,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.emptySelectionClipboard": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.guides.indentation": false,
+    "editor.lineNumbers": "on",
+    "editor.hover.delay": 500,
+    "editor.hover.enabled": "on",
+    "editor.matchBrackets": "never",
+    "editor.colorDecorators": true,
+    "editor.lightbulb.enabled": "off",
+    "editor.selectionHighlight": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "none",
+    "editor.occurrencesHighlight": "off",
+    "editor.renderControlCharacters": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+    "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.cursorStyleInactive": "underline",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.shellIntegration.enabled": false,
+
+    "diffEditor.renderSideBySide": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "window.newWindowDimensions": "inherit",
+    "clangd.path": "~/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/20.1.8/clangd_20.1.8/bin/clangd",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+    "git.confirmSync": false,
+    "extensions.autoUpdate": "off",
+    "codeberg.showGitCommandsInTerminal": true,
+    "git.autofetch": false,
+
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "[lua]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    },
+    "[qml]": {
+        "editor.defaultFormatter": "theqtcompany.qt-qml",
+    },
+
+    "tabstronaut.autoCloseOnRestore": true,
+    "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": false
+    },
+    "window.confirmSaveUntitledWorkspace": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "native",
+    "window.menuStyle": "custom",
+    "redhat.telemetry.enabled": false,
+    "yaml.extension.recommendations": false,
+    "yaml.format.singleQuote": true,
+    "docker.extension.enableComposeLanguageServer": false,
+    "forgejo.instances": [
+
+        {
+            "id": "1e0bac68-dbc3-4192-9d19-7d257676501d",
+            "name": "Codeberg",
+            "instanceUrl": "https://codeberg.org",
+            "lastConnectionTest": {
+                "success": true,
+                "timestamp": 1779475954198
+            },
+            "isDefault": true
+        }
+    ],
+    "workbench.editorAssociations": {
+      "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
+      "*.qrc": "qt-core.qrcEditor"
+    },
+    "qt-core.additionalQtPaths": [
+      {
+        "name": "Qt-5.15.19-linux-g++-x86_64_from_PATH",
+        "path": "/usr/sbin/qmake"
+      }
+    ],
+    "qt-qml.qmlls.useQmlImportPathEnvVar": true,
+    "qt-qml.doNotAskForQmllsDownload": true,
+    "qt-qml.qmlls.customExePath": "/usr/sbin/qmlls6",
+    "qt-core.showWelcomePageOnActivation": false,
+}

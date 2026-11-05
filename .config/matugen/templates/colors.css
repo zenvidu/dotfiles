@@ -1,0 +1,31 @@
+/***
+ *    ░█▀▀█ ░█▀▀▀█ ░█▀▀▀█ ── ░█▀▄▀█ ─█▀▀█ ▀▀█▀▀ ░█─░█ ░█▀▀█ ░█▀▀▀ ░█▄─░█
+ *    ░█─── ─▀▀▀▄▄ ─▀▀▀▄▄ ▀▀ ░█░█░█ ░█▄▄█ ─░█── ░█─░█ ░█─▄▄ ░█▀▀▀ ░█░█░█
+ *    ░█▄▄█ ░█▄▄▄█ ░█▄▄▄█ ── ░█──░█ ░█─░█ ─░█── ─▀▄▄▀ ░█▄▄█ ░█▄▄▄ ░█──▀█
+ *
+ ***/
+
+/*--- Semantic Colors --- */
+@define-color critical {{colors.error.default.hex}};
+@define-color critical-hover {{colors.error_container.default.hex}};
+
+/*--- Glass / Surface Effects --- */
+@define-color glass-bg {{colors.surface.default.rgba | set_alpha: 0.55}};
+@define-color glass-strong {{colors.surface_container.default.rgba | set_alpha: 0.75}};
+@define-color glass-border {{colors.outline.default.rgba | set_alpha: 0.08}};
+
+/*--- Button Styles --- */
+@define-color button_bg {{colors.surface_container.default.rgba | set_alpha: 0.45}};
+
+/*--- Alpha Utility Colors --- */
+@define-color primary-alpha {{colors.primary.default.rgba | set_alpha: 0.25}};
+@define-color surface-alpha {{colors.shadow.default.rgba | set_alpha: 0.5}};
+
+/*--- Text Variants --- */
+@define-color text-alpha {{colors.on_surface.default.rgba | set_alpha: 0.87}};
+@define-color text-dim {{colors.on_surface.default.rgba | set_alpha: 0.7}};
+
+/*--- Base Material You Palette --- */
+<* for name, value in colors *>
+@define-color {{name}} {{value.default.hex}};
+<* endfor *>

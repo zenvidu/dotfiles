@@ -1,0 +1,258 @@
+/* ===============================
+   Palette
+================================ */
+@import url("../matugen/generated/colors.css");
+
+/* ===============================
+   Global Defaults
+================================ */
+* {
+  all: unset;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "JetBrainsMono Nerd Font Propo", "Asebi Mincho", "Noto Serif CJK JP";
+}
+
+/* ===============================
+   Tooltip
+================================ */
+tooltip {
+  opacity: 1;
+  color: @secondary;
+  background-color: @surface-alpha;
+  border-radius: 6px;
+  box-shadow: 0 0 8px 4px @primary-alpha inset;
+}
+
+/* ===============================
+   Window Title
+================================ */
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#window {
+  margin-right: 8px;
+  color: @tertiary;
+}
+
+/* ===============================
+   Shared Module Styling
+================================ */
+#workspaces,
+#network,
+#pulseaudio,
+#hardware,
+#tray,
+#custom-todo,
+#custom-nowplaying,
+#custom-expand,
+#custom-privacy-dots,
+#check,
+#cloudclock {
+  background-color: @surface-alpha;
+  padding: 0 10px;
+  color: @tertiary;
+}
+
+#network,
+#pulseaudio,
+#hardware,
+#tray,
+#custom-todo,
+#custom-privacy-dots,
+#check {
+  margin: 6px 5px 6px 0;
+  border-radius: 5px 20px 5px 20px;
+
+  box-shadow:
+    3px 3px 2px rgba(0, 0, 0, 0.45),
+    0 0 8px 4px @primary-alpha inset;
+}
+
+#custom-nowplaying,
+#custom-expand,
+#cloudclock {
+  margin: 6px 0 6px 5px;
+  border-radius: 20px 5px 20px 5px;
+
+  box-shadow:
+    -3px 3px 2px rgba(0, 0, 0, 0.45),
+    0 0 8px 4px @primary-alpha inset;
+}
+
+#tray,
+#custom-todo,
+#check { /*These are for modules inside the expand module*/
+  margin: 6px 5px 6px 5px;
+}
+
+/* ===============================
+   Workspaces
+================================ */
+#workspaces {
+  margin: 5px;
+  padding: 7px 8px;
+  border-radius: 5px 5px 15px 15px;
+
+  box-shadow:
+    0 3px 2px rgba(0, 0, 0, 0.45),
+    0 0 8px 4px @primary-alpha inset;
+}
+
+#workspaces button {
+  padding: 2px 5px;
+  margin: 0 3px;
+
+  border-radius: 10px 5px 10px 5px;
+  background: @surface_container_highest;
+
+  color: transparent;
+
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  /*border: 1.5px solid red;*/
+  background-color: @primary;
+  color: @scrim;
+  min-width: 30px;
+  background-size: 400% 400%;
+}
+
+/*#workspaces button.active {
+  border: 1.5px solid;
+  border-color: @primary;
+  color: @primary;
+  min-width: 30px;
+  background-size: 400% 400%;
+}*/
+
+#workspaces button:hover {
+  background-color: @tertiary;
+  color: @scrim;
+  background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+  animation: blinkurgent 0.5s linear infinite alternate;
+}
+
+/* ===============================
+   Clock
+================================ */
+/*#clock {
+  font-family: "Seven Segment";
+}*/
+
+/* ===============================
+   Hardware Metrics
+================================ */
+#cpu,
+#memory,
+#disk {
+  padding-right: 0.5rem;
+}
+
+#cpu.critical,
+#memory.critical,
+#temperature.critical {
+  color: @critical;
+}
+
+/* ===============================
+   App Menu & Notification
+================================ */
+#custom-appmenu,
+#custom-notification {
+  font-size: 25px;
+  min-width: 60px;
+
+  background-color: @surface-alpha;
+  color: @primary;
+
+  box-shadow: 0 0 8px 4px @primary-alpha inset;
+}
+
+#custom-appmenu {
+  border-radius: 0 0 99px 0;
+  padding: 0 15 0 0px;
+}
+
+#custom-notification {
+  border-radius: 0 0 0 99px;
+  padding: 0 0 0 15px;
+}
+
+/* ===============================
+   Taskbar
+================================ */
+#taskbar {
+  font-weight: normal;
+  font-style: normal;
+  color: @tertiary;
+}
+
+/* ===============================
+   Tray
+================================ */
+#tray menu {
+  background-color: @surface-alpha;
+  padding: 8px;
+  color: @tertiary;
+  border-radius: 5px 15px 5px 15px;
+  box-shadow: 0 0 8px 4px @primary-alpha inset;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @activeBg;
+}
+
+/* ===============================
+   Now Playing
+================================ */
+/*#custom-nowplaying {
+
+}*/
+
+/* ===============================
+   Expand Button
+================================ */
+#custom-expand {
+  font-size: 15px;
+}
+
+/* ===============================
+   VPN/Proxy & Mail
+================================ */
+#custom-v2ray,
+#custom-mail {
+  font-size: 15px;
+  padding: 0.3rem;
+  color: @tertiary;
+}
+
+/* ===============================
+   Weather
+================================ */
+#custom-weather {
+  font-size: 15px;
+}
+
+/* ===============================
+   Animations
+================================ */
+@keyframes blinkurgent {
+  to {
+    background-color: @critical;
+    color: transparent;
+  }
+}

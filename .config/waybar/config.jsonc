@@ -1,0 +1,294 @@
+// See https://github.com/Alexays/Waybar/wiki
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 46,
+    "mode": "dock",
+    "spacing": 4, // Gaps between modules (4px)
+    "fixed-center": true,
+    "reload_style_on_change": true,
+    //"include": [
+    //"~/.config/waybar/modules.jsonc",
+    //"~/.config/waybar/hardware.jsonc",
+    //"~/.config/waybar/media.jsonc"
+    //],
+    // ==+++==+++==+++==+++==+++==+++==+++==+++==
+    // MODULE LAYOUT
+    // ==+++==+++==+++==+++==+++==+++==+++==+++==
+    "modules-left": [
+        "custom/appmenu",
+        "group/cloudclock",
+        "custom/nowplaying",
+        //"custom/debug",
+        "group/list"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+        "group/hardware",
+        "custom/privacy-dots",
+        "pulseaudio",
+        "custom/notification"
+    ],
+    // ==+++==+++==+++==+++==+++==+++==+++==+++==
+    // MODULE CONFIGURATION
+    // ==+++==+++==+++==+++==+++==+++==+++==+++==
+    //"custom/debug": {
+    //    "exec": "cat /tmp/waybar-debug",
+    //    "signal": 10
+    //},
+    // echo "Some Text" > /tmp/waybar-debug && pkill -SIGRTMIN+10 waybar  <- command to run in the terminal
+    "custom/appmenu": {
+        "format": "󰣇",
+        "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
+        "on-click": "rofi -disable-history -show-icons -show",
+        "tooltip": false //For time Being
+    },
+    "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format": "{0:%I:%M:%S %p}",
+        //"format-alt": "{0:%I:%M:%S}  {0:%d-%m-%Y}",
+        "format-alt": "{0:%d-%m-%Y}",
+        "interval": 1,
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "",
+            "on-scroll": 1,
+            "iso8601": true,
+            "first-day-of-week": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "custom/weather": { // Reads coordinates from ~/.config/scripts/weather/.env.weather
+        "format": "{}",
+        "exec": "python3 $HOME/.config/scripts/weather/weather.py",
+        "interval": 1800,
+        "return-type": "json",
+        "min-length": 8,
+        "max-length": 8,
+        "on-click": "python3 $HOME/.config/scripts/weather/weather.py click"
+    },
+    "group/cloudclock": {
+        "orientation": "horizontal",
+        "modules": [
+            "clock",
+            "custom/weather"
+        ]
+    },
+    "custom/nowplaying": {
+        "exec": "$HOME/.config/scripts/nowplaying.sh",
+        "return-type": "text",
+        "max-length": 50,
+        "format": " {}"
+    },
+    "custom/v2ray": {
+        "exec": "~/.config/scripts/v2ray.sh",
+        "return-type": "json",
+        "signal": 8,
+        "exec-on-event": false,
+        "on-click": "~/.config/scripts/v2ray.sh toggle",
+        "on-click-right": "xdg-open 'http://0.0.0.0:2017/'"
+    },
+    "custom/mail": {
+        "exec": "~/.config/scripts/email/check_mail.sh",
+        "return-type": "json",
+        "interval": 900,
+        "on-click": "xdg-open 'https://mail.google.com/mail/u/0/'",
+        "on-click-middle": "xdg-open 'https://mail.google.com/mail/u/1/'",
+        "on-click-right": "xdg-open 'https://mail.google.com/mail/u/2/'"
+    },
+    "group/check": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/mail",
+            "custom/v2ray"
+        ]
+    },
+    "custom/todo": {
+        "format": "\u00a0{}",
+        "exec": "$HOME/.config/scripts/todo/todo.sh",
+        "on-double-click": "$HOME/.config/scripts/todo/todo.sh --mark-done",
+        /// To use tui on right click use something like this
+        ///  "on-click-right": "foot $HOME/.config/scripts/todo/todo.sh --show-tui",
+        "on-click-right": "killall rofi || bash $HOME/.config/scripts/todo/todo.sh --show-rofi",
+        "on-click-middle": "~/.config/waybar/scripts/todo/todo.sh --middle-click",
+        "return-type": "json",
+        "interval": 5,
+        "tooltip": true
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        //"format": "",
+        // "format-icons": {
+        //     //"active": "",
+        //     "active": "",
+        //     "default": "",
+        //     //"default": "",
+        //     "special": "",
+        //     "urgent": "",
+        //     //"urgent": "",
+        // },
+        "format-icons": {
+            "1": "永",
+            "2": "忍",
+            "3": "愛",
+            "4": "碧",
+            "5": "玲",
+            "6": "綾",
+            "7": "海",
+            "8": "京",
+            "9": "煌",
+            "10": "寿",
+            "special": "時",
+            "default": ""
+            // 永忍愛碧玲綾海京煌寿時
+        },
+        //"persistent-workspaces": {
+        //    "*": 3 // 3 workspaces by on every monitor
+        //},
+        "show-special": true,
+        "special-visible-only": true
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes} ",
+        "format-ethernet": "  {bandwidthDownBytes}  {bandwidthUpBytes} ",
+        "format-disconnected": " Disconnected",
+        //"tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": " {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "",
+        "max-length": 50,
+        "interval": 1,
+        "on-click": "nm-connection-editor",
+        "on-click-right":"kitty -e bandwhich"
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}%",
+        "on-click": "kitty -e btop --themes-dir $HOME/.config/matugen/generated/",
+        "tooltip": false,
+        "states": {
+            "critical": 80
+        }
+    },
+    "memory": {
+        "interval": 1,
+        "format": " {}%",
+        "on-click": "kitty -e btop --themes-dir $HOME/.config/matugen/generated/",
+        "tooltip-format": "{used:0.1f}GB used",
+        "states": {
+            "critical": 80
+        }
+    },
+    "temperature": {
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "interval": 1,
+        "critical-threshold": 80,
+        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+        "input-filename": "temp1_input",
+        "tooltip": false
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature"
+        ]
+    },
+    "custom/privacy-dots": {
+        "exec": "$HOME/.config/scripts/privacy_dots.sh",
+        "return-type": "json",
+        "interval": 3,
+        "format": "{text}",
+        "tooltip": true,
+        "escape": false,
+        "markup": "pango"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󱡒",
+            "headset": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+    },
+    "custom/notification": {
+        "tooltip": false,
+        // "format": "{} {icon}",
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󰅸",
+            "none": "",
+            "dnd-notification": "󰂟",
+            "dnd-none": "",
+            "inhibited-notification": "",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none": "",
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true,
+    },
+    "custom/expand": {
+        "format": "󱅥",
+        "tooltip": false,
+        "tooltip-format": "Expand"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8
+    },
+    "group/list": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "children-class": "child-list",
+            "transition-left-to-right": true,
+            "click-to-reveal": false
+        },
+        "modules": [
+            "custom/expand",
+            "tray",
+            "custom/todo",
+            "group/check"
+        ]
+    },
+}

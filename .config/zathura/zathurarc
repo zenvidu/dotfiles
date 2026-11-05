@@ -1,0 +1,6 @@
+#set guioptions "sh"
+#https://github.com/pwmt/zathura/issues/983 (above is a workaround for this bug)
+#Latest non-fixed version is 2026.07.18
+
+set selection-clipboard clipboard
+set smooth-scroll true

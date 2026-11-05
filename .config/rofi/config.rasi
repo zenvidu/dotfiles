@@ -1,0 +1,55 @@
+
+@theme "~/.config/rofi/themes/main.rasi"
+
+configuration {
+	modi:				    "drun,run,window";
+    case-sensitive: false;
+	show-icons:			    false;
+	icon-theme:			    "Papirus";
+	display-drun:			"";
+	display-run:			"";
+	display-filebrowser:	"";
+	display-window:			"";
+	drun-display-format:	"{name}";
+	window-format:          "{w} · {c} · {t}";
+	scroll-method: 			0;
+    normalize-match:        true;
+	hover-select:			true;
+	me-select-entry:		"MouseSecondary";
+	me-accept-entry:		"MousePrimary";
+
+	threads: 			    0;
+	click-to-exit: 			true;
+
+	drun-categories: 		    "";
+	drun-match-fields: 		    "name,generic,exec,categories,keywords";
+	drun-show-actions: 		    false;
+	drun-url-launcher: 		    "xdg-open";
+	drun-use-desktop-cache: 	false;
+	drun-reload-desktop-cache: 	false;
+	drun {
+		parse-user:     true;
+		parse-system:   true;
+	}
+
+	run-command: 			"{cmd}";
+	run-list-command: 		"";
+	run-shell-command: 		"{terminal} -e {cmd}";
+
+	filebrowser {
+		directories-first: 	    true;
+		sorting-method:    	    "name";
+	    show-hidden: 		    true;
+	}
+
+	window-format: 			"{w} - {c} - {t:0}";
+	window-command: 		"wmctrl -i -R {window}";
+	window-match-fields: 	"title,class,role,name,desktop";
+	window-thumbnail: 		false;
+	hide-active-window: 	true;
+
+	timeout {
+		action: 		"kb-cancel";
+		delay:  		0;
+	}
+}

@@ -1,0 +1,28 @@
+{
+  "checksum": ":)",
+  "wallpaper": "/home/pegasus-pulse/.dotfiles/.config/wallpapers/choosen/pexels-connorscottmcmanus-17616802.jpg",
+  "alpha": "100",
+  "special": {
+    "background": "#11140f",
+    "foreground": "#e1e4da",
+    "cursor": "#a6d394"
+  },
+  "colors": {
+    "color0": "#11140f",
+    "color1": "#eafac4",
+    "color2": "#b8d8a4",
+    "color3": "#95d9dc",
+    "color4": "#a6d394",
+    "color5": "#a0cfd1",
+    "color6": "#395829",
+    "color7": "#c3c8bc",
+    "color8": "#43483f",
+    "color9": "#a1de89",
+    "color10": "#9cc980",
+    "color11": "#6fcbcf",
+    "color12": "#88c470",
+    "color13": "#7ebec0",
+    "color14": "#275519",
+    "color15": "#e1e4da"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "config": {
+    "scheduled_time": "none",
+    "scheduled_action": "none",
+    "last_checked_timestamp": 0,
+    "middle_click_action": "completed"
+  },
+  "tasks": [
+    {
+      "priority": 1,
+      "status": 0,
+      "description": "polish the personal site"
+    },
+    {
+      "priority": 2,
+      "status": 0,
+      "description": "api to the site for discord widget"
+    },
+    {
+      "priority": 3,
+      "status": 0,
+      "description": "install, configure blesh"
+    },
+    {
+      "priority": 4,
+      "status": 0,
+      "description": "complete aniyomi anime list"
+    },
+    {
+      "priority": 5,
+      "status": 0,
+      "description": "migrate from aniyomi to anikku"
+    },
+    {
+      "priority": 6,
+      "status": 0,
+      "description": "improve v2rayA script"
+    },
+    {
+      "priority": 7,
+      "status": 0,
+      "description": "shortcut list on arch logo right click"
+    },
+    {
+      "priority": 10,
+      "status": 0,
+      "description": "Separate app audio to devices"
+    },
+    {
+      "priority": 11,
+      "status": 0,
+      "description": "SearXNG settings edit"
+    }
+  ]
+}

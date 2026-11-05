@@ -1,0 +1,148 @@
+[config]
+version_check = false
+#fallback_color = "#228B22"
+#prefer = "closest-to-fallback"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/matugen/generated/hypr-matugen.lua'
+post_hook = 'hyprctl reload'
+#post_hook   = '''
+#bash -c '
+#{
+#  mkdir -p "$HOME/.config/hypr/config/colors"
+#  ln -nfs "$HOME/.config/matugen/generated/hypr-matugen.lua" "$HOME/.config/hypr/config/colors/hypr-matugen.lua"
+#  hyprctl reload
+#} >/dev/null 2>&1 </dev/null & disown
+#'
+#'''
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/matugen/generated/hypr-matugen.conf'
+
+[templates.css]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/matugen/generated/colors.css'
+post_hook   = '''
+bash -c '
+{
+  pkill -SIGUSR2 waybar
+  killall swayosd-server; swayosd-server &
+} >/dev/null 2>&1 </dev/null & disown
+'
+'''
+
+#[templates.gtk3]
+#input_path = '~/.config/matugen/templates/gtk-colors.css'
+#output_path = '~/.config/gtk-3.0/gtk.css'
+#post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+#[templates.gtk4]
+#input_path = '~/.config/matugen/templates/gtk-colors.css'
+#output_path = '~/.config/gtk-4.0/gtk.css'
+#output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/matugen/generated/rofi-matugen.rasi'
+
+#[templates.starship]
+#input_path = '~/.config/matugen/templates/starship-colors.toml'
+#output_path = '~/.config/matugen/generated/starship-matugen.toml'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/matugen/generated/kitty-matugen.conf'
+post_hook   = '''
+bash -c '
+{
+  ln -nfs "$HOME/.config/matugen/generated/kitty-matugen.conf" "$HOME/.config/kitty/kitty-matugen.conf"
+  pkill -SIGUSR1 kitty
+} >/dev/null 2>&1 </dev/null & disown
+'
+'''
+
+[templates.yazi]
+input_path  = '~/.config/matugen/templates/yazi-colors.toml'
+output_path = '~/.config/matugen/generated/yazi-matugen.toml'
+post_hook   = '''
+ln -nfs "$HOME/.config/matugen/generated/yazi-matugen.toml" "$HOME/.config/yazi/theme.toml"
+'''
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/matugen/generated/cava-matugen.ini'
+post_hook   = '''
+bash -c '
+{
+  mkdir -p "$HOME/.config/cava/themes"
+  ln -nfs "$HOME/.config/matugen/generated/cava-matugen.ini" "$HOME/.config/cava/themes/cava-matugen.ini"
+  pkill -USR1 cava
+} >/dev/null 2>&1 </dev/null & disown
+'
+'''
+
+[templates.rmpc]
+input_path = '~/.config/matugen/templates/rmpc-matugen.ron'
+output_path = '~/.config/matugen/generated/rmpc-matugen.ron'
+post_hook   = '''
+bash -c '
+{
+  mkdir -p "$HOME/.config/rmpc/themes"
+  ln -nfs "$HOME/.config/matugen/generated/rmpc-matugen.ron" "$HOME/.config/rmpc/themes/rmpc-matugen.ron"
+} >/dev/null 2>&1 </dev/null & disown
+'
+'''
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/matugen/generated/btop-matugen.theme'
+post_hook = 'pkill -SIGUSR2 btop || true'
+
+#s[templates.discord]
+#input_path = '~/.config/matugen/templates/midnight-discord.css'
+#output_path = '~/.config/matugen/generated/midnight-discord.css'
+#post_hook   = '''
+#bash -c '
+#{
+#  mkdir -p "$HOME/.config/vesktop/themes"
+#  ln -nfs "$HOME/.config/matugen/generated/midnight-discord.css" "$HOME/.config/vesktop/themes/midnight-discord.css"
+#} >/dev/null 2>&1 </dev/null & disown
+#'
+#'''
+
+[templates.folder]
+input_path = '~/.config/matugen/templates/folder-color.txt'
+output_path = '~/.config/matugen/papirus-folders/folder-color.txt'
+post_hook   = '''
+bash -c '
+{
+  $HOME/.config/matugen/papirus-folders/change-icons.sh
+} >/dev/null 2>&1 </dev/null & disown
+'
+'''
+
+[templates.vscode-raw]
+input_path = '~/.config/matugen/templates/vscode-colors'
+output_path = '~/.config/matugen/generated/vscode-colors'
+post_hook   = '''
+bash -c '
+{
+  mkdir -p "$HOME/.cache/matugen"
+  ln -nfs "$HOME/.config/matugen/generated/vscode-colors" "$HOME/.cache/matugen/vscode-colors"
+} >/dev/null 2>&1 </dev/null & disown
+'
+'''
+
+[templates.vscode-json]
+input_path = '~/.config/matugen/templates/vscode-colors.json'
+output_path = '~/.config/matugen/generated/vscode-colors.json'
+post_hook   = '''
+bash -c '
+{
+  mkdir -p "$HOME/.cache/matugen"
+  ln -nfs "$HOME/.config/matugen/generated/vscode-colors.json" "$HOME/.cache/matugen/vscode-colors.json"
+} >/dev/null 2>&1 </dev/null & disown
+'
+'''
