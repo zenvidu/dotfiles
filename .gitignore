@@ -1,0 +1,13 @@
+.config/wallpapers/
+.config/cava/shaders/
+.config/scripts/email/gmail*
+.config/scripts/weather/.env.cords
+.config/gtk-3.0/*
+.config/VSCodium/*
+.config/VSCodium/User/*
+.config/quickshell/.qmlls.ini
+!.config/scripts/weather/.env.weather.example
+!.config/gtk-3.0/
+!.config/gtk-3.0/settings.ini
+!.config/VSCodium/User/
+!.config/VSCodium/User/settings.json
